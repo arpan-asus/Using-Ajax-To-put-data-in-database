@@ -22,3 +22,7 @@ Route::get('/test',function()
 {
     return view('hello');
 });
+
+Route::get('/form', [TaskController::class, 'getForm'])->name('getForm');
+Route::post('/form', [TaskController::class, 'getstore'])->name('getstore');
+Route::get('/ajax/fetch', [TaskController::class, 'ajaxfetch'])->name('ajaxfetch');

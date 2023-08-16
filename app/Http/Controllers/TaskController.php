@@ -63,4 +63,23 @@ class TaskController extends Controller
     {
         //
     }
+    public function getForm(){
+        return view('tasks.create');
+    }
+    public function getstore(Request $request){
+        $task=new Task();
+        $task->name=$request->input('name');
+        $task->email=$request->input('email');
+
+        $task->save();
+
+        return response()->json(['message' => 'Company added Successfully']);
+    }
+    public function ajaxfetch(){
+        $data=[
+            'name'=>'arpan',
+            'email'=>'iamnepalinoob15@gmail.com',
+        ];
+        return response()->json($data);
+    }
 }
