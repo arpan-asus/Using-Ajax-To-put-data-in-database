@@ -25,4 +25,6 @@ Route::get('/test',function()
 
 Route::get('/form', [TaskController::class, 'getForm'])->name('getForm');
 Route::post('/form', [TaskController::class, 'getstore'])->name('getstore');
-Route::get('/ajax/fetch', [TaskController::class, 'ajaxfetch'])->name('ajaxfetch');
+Route::get('/ajax/fetch', [TaskController::class, 'ajaxfetchData'])->name('ajaxfetch');//response
+Route::get('/fetchajax', [TaskController::class, 'fetchajax'])->name('fetchajaxData');//view
+

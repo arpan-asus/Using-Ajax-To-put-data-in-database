@@ -75,11 +75,28 @@ class TaskController extends Controller
 
         return response()->json(['message' => 'Company added Successfully']);
     }
-    public function ajaxfetch(){
-        $data=[
-            'name'=>'arpan',
-            'email'=>'iamnepalinoob15@gmail.com',
+    public function ajaxfetchData(){
+        $data= [
+            [
+                'name'=>'arpan',
+                'email'=>'iamnepalinoob15@gmail.com',
+                'number'=>'98765434'
+            ],
+            [
+                'name'=>'suman',
+                'email'=>'suman@gmail.com',
+                'number'=>'98765434'
+            ],
+            [
+                'name'=>'anish',
+                'email'=>'anish@gmail.com',
+                'number'=>'98765434'
+            ]
         ];
         return response()->json($data);
+    }
+    public function fetchajax()
+    {
+        return view('tasks.ajaxfetch');
     }
 }
